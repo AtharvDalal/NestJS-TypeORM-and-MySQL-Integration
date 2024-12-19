@@ -5,94 +5,205 @@
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+  # **NestJS with TypeORM And MySQL**
 
-## Description
+This project is a backend API built with **NestJS**, **TypeORM**, and **MySQL**. It demonstrates how to use TypeORM with SQL databases and implement **One-to-One**, **One-to-Many**, and **Many-to-One** relationships.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+---
 
-## Project setup
+##  **Features**
 
-```bash
-$ npm install
-```
+-  **User CRUD Operations**: Create, read, update, and delete users.
+-  **User Profile**: Create and fetch profiles for users.
+-  **User Posts**: Create and associate posts with users.
+-  **MySQL Integration**: Use MySQL with TypeORM to manage data.
 
-## Compile and run the project
+---
 
-```bash
-# development
-$ npm run start
+## ⚙️ **Installation**
 
-# watch mode
-$ npm run start:dev
+Follow these steps to set up and run the project locally:
 
-# production mode
-$ npm run start:prod
-```
+1. **Clone the Repository**
 
-## Run tests
+    ```bash
+    git clone https://github.com/AtharvDalal/NestJs-with-TypeORM-MySql
+    cd NestJs-with-TypeORM-MySql
+    ```
 
-```bash
-# unit tests
-$ npm run test
+2. **Install Dependencies**
 
-# e2e tests
-$ npm run test:e2e
+    Ensure **Node.js** is installed. Then run:
 
-# test coverage
-$ npm run test:cov
-```
+    ```bash
+    npm install
+    ```
 
-## Deployment
+3. **Set up the Environment Variables**
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+    Create a `.env` file in the root directory with the following values:
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+    ```env
+    DB_HOST=localhost
+    DB_PORT=3306
+    DB_USERNAME=root
+    DB_PASSWORD=yourpassword
+    DB_DATABASE=yourdatabase
+    PORT=3000
+    ```
 
-```bash
-$ npm install -g mau
-$ mau deploy
-```
+4. **Run the Server**
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+    Start the server in development mode:
 
-## Resources
+    ```bash
+    npm run start:dev
+    ```
 
-Check out a few resources that may come in handy when working with NestJS:
+    The server will run at:  
+    🌐 `http://localhost:3000`
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+---
 
-## Support
+## 📄 **API Routes**
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### **GET /user** - Fetch all users.
+- **Response**:
 
-## Stay in touch
+    ```json
+    [
+      {
+        "id": 1,
+        "username": "john_doe"
+      },
+      {
+        "id": 2,
+        "username": "jane_doe"
+      }
+    ]
+    ```
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+---
+
+### **POST /user** - Create a new user.
+- **Request Body**:
+
+    ```json
+    {
+      "username": "john_doe",
+      "password": "password123"
+    }
+    ```
+
+- **Response**:
+
+    ```json
+    {
+      "id": 1,
+      "username": "john_doe"
+    }
+    ```
+
+---
+
+### **PUT /user/:id** - Update an existing user by ID.
+- **Request Body**:
+
+    ```json
+    {
+      "username": "john_doe_updated",
+      "password": "newpassword123"
+    }
+    ```
+
+- **Response**:
+
+    ```json
+    {
+      "id": 1,
+      "username": "john_doe_updated"
+    }
+    ```
+
+---
+
+### **DELETE /user/:id** - Delete a user by ID.
+- **Response**:
+
+    ```json
+    {
+      "message": "User deleted successfully"
+    }
+    ```
+
+---
+
+### **POST /user/:id/profile** - Create a profile for a user.
+- **Request Body**:
+
+    ```json
+    {
+      "name": "John",
+      "surname": "Doe",
+      "email": "john.doe@example.com",
+      "age": 30,
+      "address": "123 Main Street"
+    }
+    ```
+
+- **Response**:
+
+    ```json
+    {
+      "name": "John",
+      "surname": "Doe",
+      "email": "john.doe@example.com",
+      "age": 30,
+      "address": "123 Main Street",
+      "userId": 1
+    }
+    ```
+
+---
+
+### **GET /user/:id/profile** - Fetch a user's profile by ID.
+- **Response**:
+
+    ```json
+    {
+      "name": "John",
+      "surname": "Doe",
+      "email": "john.doe@example.com",
+      "age": 30,
+      "address": "123 Main Street"
+    }
+    ```
+
+---
+
+### **POST /user/:id/posts** - Create a post for a user.
+- **Request Body**:
+
+    ```json
+    {
+      "title": "My First Post",
+      "desc": "This is the description of my first post."
+    }
+    ```
+
+- **Response**:
+
+    ```json
+    {
+      "title": "My First Post",
+      "desc": "This is the description of my first post.",
+      "userId": 1
+    }
+    ```
+
+
+
+
 
 ## License
 
