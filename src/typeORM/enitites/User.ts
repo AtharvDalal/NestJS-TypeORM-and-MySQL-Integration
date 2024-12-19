@@ -1,4 +1,13 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  OneToMany,
+  OneToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import { Profile } from './Profile';
+import { userPost } from './Post';
 
 @Entity({ name: 'users' })
 export class User {
@@ -16,4 +25,11 @@ export class User {
 
   @Column({ nullable: true })
   authStrategy: string;
+
+  @OneToOne(() => Profile) // Add cascade for auto-saving
+  @JoinColumn() // User owns the relationship
+  profile: Profile;
+
+  @OneToMany(() => userPost, (post) => post.user)
+  userpost: userPost[];
 }
