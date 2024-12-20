@@ -1,0 +1,7 @@
+{
+  "editor.fontFamily": "'Cascadia Code'",
+  "editor.fontSize": 14,
+  "editor.fontWeight": "300",
+  "terminal.integrated.fontWeight": "500",
+  "terminal.integrated.fontWeightBold": "900"
+}
