@@ -25,8 +25,12 @@ export class UserService {
     private PostUserRepository: Repository<userPost>,
   ) {}
 
-  fetchUser() {
-    return this.userRepository.find({ relations: ['profile', 'userpost'] });
+  fetchUser(page: number, limit: number) {
+    return this.userRepository.findAndCount({
+      take: limit,
+      skip: (page - 1) * limit,
+      relations: ['profile', 'userpost'],
+    });
   }
 
   CreateUser(userDeatils: CreateUserParams) {
